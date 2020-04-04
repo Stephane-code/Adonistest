@@ -1,0 +1,15 @@
+@layout('main')
+
+@section('content')
+<h1>{{tittle}}</h1>
+@if(old('notification'))
+    <div class="alert alert-success">
+      {{ old('notification') }}
+    </div>
+  @endif
+<ul> 
+    @each(todo in todos)
+        <li class="list-group-item"><a href="/posts/{{post.id}}">{{todo.title}}</a></li>
+    @endeach
+</ul>
+@endsection
